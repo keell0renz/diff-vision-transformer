@@ -9,3 +9,13 @@ We compare how Differential and Classic ViTs perform on [CIFAR-100](https://hugg
 [CIFAR-100](https://huggingface.co/datasets/uoft-cs/cifar100) serves as a dataset for measuring general image classification performance, while [BACH](https://huggingface.co/datasets/1aurent/BACH) dataset is used to measure how model works with noisy data, or how good model learns to differentiate useful signals from noise around. The hypothesis of this research is that Differential Vision Transformer is better suited for classification of data which contains noise.
 
 We train 3 models of approximate sizes of 10M (small), 25M (medium), and 50M (large) parameters for each architecture (Differential and Classic ViT) for each dataset, to determine the relationship between scale and performance for 2 different architectures.
+
+## Metrics
+
+### Training and Test Loss
+
+There are 4 plots, 2 per each architecture of Differential and Classic ViT. First plot of each architecture records training loss per batch, while second plot records test loss per batch. Each plot contains 3 graphs which represent size of model: small, medium or large. X-axes are numbers of batches, and Y-axes are values of Cross-Entropy loss.
+
+### Scaling Laws
+
+There are 2 plots, 1 per each architecture. X-axes of plots represent model size in millions of parameters, and Y-axes of plots represent test accuracy in %. First plot represents Classic ViT, and second plot represents Differential ViT.
