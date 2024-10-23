@@ -1,4 +1,4 @@
-# Differential Vision Transformer
+# Differential Vision Transformer (Research in progress)
 
 This research explores the novel [Differential Transformer](https://arxiv.org/abs/2410.05258) architecture for supervised image classification tasks and measures its performance compared to traditional ViT architecture.
 
