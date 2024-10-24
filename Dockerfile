@@ -10,6 +10,9 @@ COPY . .
 # Install uv
 COPY --from=ghcr.io/astral-sh/uv:latest /uv /uvx /bin/
 
+RUN echo 'source /diff-vision-transformer/.venv/bin/activate' >> ~/.bashrc && \
+    echo 'cd /diff-vision-transformer' >> ~/.bashrc
+
 # Create a virtual environment
 RUN uv venv
 
@@ -18,5 +21,4 @@ ENV UV_HTTP_TIMEOUT=60
 # Install python dependencies
 RUN uv sync
 
-# Activate the virtual environment and start a shell
-CMD ["/bin/bash", "-c", "source .venv/bin/activate && exec /bin/bash"]
+CMD ["/bin/bash"]
