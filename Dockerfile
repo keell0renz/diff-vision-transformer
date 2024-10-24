@@ -10,8 +10,8 @@ COPY . .
 # Install uv
 COPY --from=ghcr.io/astral-sh/uv:latest /uv /uvx /bin/
 
-RUN echo 'source /diff-vision-transformer/.venv/bin/activate' >> ~/.bashrc && \
-    echo 'cd /diff-vision-transformer' >> ~/.bashrc
+RUN echo 'cd /diff-vision-transformer' >> ~/.bashrc && \
+    echo 'source .venv/bin/activate' >> ~/.bashrc
 
 # Create a virtual environment
 RUN uv venv
