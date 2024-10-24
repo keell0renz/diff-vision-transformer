@@ -122,13 +122,13 @@ python3 run.py evaluate
 #### Upload / Download
 
 ```bash
-python3 run.py upload
-    --in_file <path> # Path on local repository.
-    --out_dir <path> # Path (directory) on HF repository.
+uv run run.py upload
+    <path> # Path on local repository.
+    <path> # Path (directory) on HF repository.
 ```
 
 ```bash
-python3 run.py upload
-    --in_file <path> # Path on HF repository.
-    --out_dir <path> # Path (directory) on local repository.
+uv run run.py download
+    <path> # Path on HF repository.
+    <path> # Path (directory) on local repository.
 ```
