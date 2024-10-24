@@ -67,22 +67,22 @@ Sizes ~10M, ~25M, ~50M
 
 _Files not related to pipeline are not included._
 
-* /app
-  * /vit_classic.py
-  * /vit_differential.py
-  * /evaluation.py
-  * /dataset.py
-  * /train.py
-  * /utils.py
-* /run.py
-* /.env
-* /checkpoints
-  * /vit_classic
-    * /model_{run_id}_{"10B" | "25B" | "50B"}\_{dataset_name}.safetensors
-    * /model_{run_id}_{"10B" | "25B" | "50B"}\_{dataset_name}_training.log
-  * /vit_differential
-    * /model_{run_id}_{"10B" | "25B" | "50B"}\_{dataset_name}.safetensors
-    * /model_{run_id}_{"10B" | "25B" | "50B"}\_{dataset_name}_training.log
+- /app
+  - /vit_classic.py
+  - /vit_differential.py
+  - /evaluation.py
+  - /dataset.py
+  - /train.py
+  - /utils.py
+- /run.py
+- /.env
+- /checkpoints
+  - /vit_classic
+    - /model*{run_id}*{"10B" | "25B" | "50B"}\_{dataset_name}.safetensors
+    - /model*{run_id}*{"10B" | "25B" | "50B"}\_{dataset_name}\_training.log
+  - /vit_differential
+    - /model*{run_id}*{"10B" | "25B" | "50B"}\_{dataset_name}.safetensors
+    - /model*{run_id}*{"10B" | "25B" | "50B"}\_{dataset_name}\_training.log
 
 ### Notes
 
@@ -101,13 +101,13 @@ GitHub CI/CD is set to dockerize training code and upload it on dedicated contai
 #### Training
 
 ```bash
-python3 run.py train 
+python3 run.py train
     --model "vit_classic" | "vit_differential"
     --size "10B" | "25B" | "50B"
     --dataset "CIFAR-100" | "BACH"
     --epochs <int>
     --batch_size <int>
-    --upload <bool> # Upload both .safetensors and .log file. 
+    --upload <bool> # Upload both .safetensors and .log file.
 ```
 
 #### Evaluation
@@ -123,13 +123,12 @@ python3 run.py evaluate
 
 ```bash
 python3 run.py upload
-    --in <path> # Path on local repository.
-    --out <path> # Path on HF repository.
-    --message <str> # Commit message. Default it Added {out path} file.
+    --in_file <path> # Path on local repository.
+    --out_dir <path> # Path (directory) on HF repository.
 ```
 
 ```bash
 python3 run.py upload
-    --in <path> # Path on HF repository.
-    --out <path> # Path on local repository.
+    --in_file <path> # Path on HF repository.
+    --out_dir <path> # Path (directory) on local repository.
 ```
