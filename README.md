@@ -78,11 +78,11 @@ _Files not related to pipeline are not included._
 * /.env
 * /checkpoints
   * /vit_classic
-    * /model_{run_id}_{"10b" | "25b" | "50b"}\_{dataset_name}.safetensors
-    * /model_{run_id}_{"10b" | "25b" | "50b"}\_{dataset_name}_training.log
+    * /model_{run_id}_{"10B" | "25B" | "50B"}\_{dataset_name}.safetensors
+    * /model_{run_id}_{"10B" | "25B" | "50B"}\_{dataset_name}_training.log
   * /vit_differential
-    * /model_{run_id}_{"10b" | "25b" | "50b"}\_{dataset_name}.safetensors
-    * /model_{run_id}_{"10b" | "25b" | "50b"}\_{dataset_name}_training.log
+    * /model_{run_id}_{"10B" | "25B" | "50B"}\_{dataset_name}.safetensors
+    * /model_{run_id}_{"10B" | "25B" | "50B"}\_{dataset_name}_training.log
 
 ### Notes
 
