@@ -1,4 +1,9 @@
-from app.utils import upload_file_to_hf, download_file_from_hf, load_environment
+from app.utils import (
+    upload_file_to_hf,
+    download_file_from_hf,
+    load_environment,
+    pytorch_health_check,
+)
 from typer import Typer, Argument
 
 
@@ -27,6 +32,14 @@ def download(
     """
 
     download_file_from_hf(in_file, out_dir)
+
+
+@app.command()
+def health():
+    """
+    Perform a health check for PyTorch and print relevant information.
+    """
+    pytorch_health_check()
 
 
 if __name__ == "__main__":

@@ -21,6 +21,21 @@ def load_environment():
             os.environ[key] = value
 
 
+def pytorch_health_check() -> None:
+    """
+    Perform a health check for PyTorch and print relevant information.
+    """
+    print(f"PyTorch Version: {torch.__version__}")
+    print(f"CUDA Version: {torch.version.cuda}")  # type: ignore
+    print(f"CUDA Available: {torch.cuda.is_available()}")
+    if torch.cuda.is_available():
+        print("GPUs:")
+        for i in range(torch.cuda.device_count()):
+            print(f"  {i}: {torch.cuda.get_device_name(i)}")
+    else:
+        print("No GPUs available.")
+
+
 def save_model_to_safetensors(model: torch.nn.Module, path: str) -> None:
     """
     Save a PyTorch model's state dict to a file using safetensors format.
@@ -99,7 +114,7 @@ def download_file_from_hf(filename_in: str, directory_out: str) -> None:
 
     api = HfApi()
 
-    if filename_in.startswith('/'):
+    if filename_in.startswith("/"):
         filename_in = filename_in[1:]
 
     api.hf_hub_download(
