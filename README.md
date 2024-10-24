@@ -67,19 +67,20 @@ Sizes ~10M, ~25M, ~50M
 
 _Files not related to pipeline are not included._
 
-* /vit_classic
-  * /vit_10b_model.py
-  * /vit_25b_model.py
-  * /vit_50b_model.py
-* /vit_differential
-  * /vit_diff_10b_model.py
-  * /vit_diff_25b_model.py
-  * /vit_diff_50b_model.py
-* /evaluation.py
-* /dataset.py
-* /train.py
-* /utils.py
-* /app.py
+* /app
+  * /vit_classic
+    * /vit_10b_model.py
+    * /vit_25b_model.py
+    * /vit_50b_model.py
+  * /vit_differential
+    * /vit_diff_10b_model.py
+    * /vit_diff_25b_model.py
+    * /vit_diff_50b_model.py
+  * /evaluation.py
+  * /dataset.py
+  * /train.py
+  * /utils.py
+* /run.py
 * .env
 * /checkpoints
   * /vit_classic
@@ -106,7 +107,7 @@ GitHub CI/CD is set to dockerize training code and upload it on dedicated contai
 #### Training
 
 ```bash
-python3 app.py train 
+python3 run.py train 
     --model "vit_classic" | "vit differential"
     --size "10B" | "25B" | "50B"
     --dataset "CIFAR-100" | "BACH"
@@ -118,7 +119,7 @@ python3 app.py train
 #### Evaluation
 
 ```bash
-python3 app.py evaluate
+python3 run.py evaluate
     --model "vit_classic" | "vit differential"
     --size "10B" | "25B" | "50B"
     --dataset "CIFAR-100" | "BACH"
@@ -127,14 +128,14 @@ python3 app.py evaluate
 #### Upload / Download
 
 ```bash
-python3 app.py upload
+python3 run.py upload
     --in <path> # Path on local repository.
     --out <path> # Path on HF repository.
     --message <str> # Commit message. Default it Added {out path} file.
 ```
 
 ```bash
-python3 app.py upload
+python3 run.py upload
     --in <path> # Path on HF repository.
     --out <path> # Path on local repository.
 ```
