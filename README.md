@@ -68,14 +68,8 @@ Sizes ~10M, ~25M, ~50M
 _Files not related to pipeline are not included._
 
 * /app
-  * /vit_classic
-    * /vit_10b_model.py
-    * /vit_25b_model.py
-    * /vit_50b_model.py
-  * /vit_differential
-    * /vit_diff_10b_model.py
-    * /vit_diff_25b_model.py
-    * /vit_diff_50b_model.py
+  * /vit_classic.py
+  * /vit_differential.py
   * /evaluation.py
   * /dataset.py
   * /train.py
