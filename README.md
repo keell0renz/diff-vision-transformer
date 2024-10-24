@@ -108,7 +108,7 @@ GitHub CI/CD is set to dockerize training code and upload it on dedicated contai
 
 ```bash
 python3 run.py train 
-    --model "vit_classic" | "vit differential"
+    --model "vit_classic" | "vit_differential"
     --size "10B" | "25B" | "50B"
     --dataset "CIFAR-100" | "BACH"
     --epochs <int>
@@ -120,7 +120,7 @@ python3 run.py train
 
 ```bash
 python3 run.py evaluate
-    --model "vit_classic" | "vit differential"
+    --model "vit_classic" | "vit_differential"
     --size "10B" | "25B" | "50B"
     --dataset "CIFAR-100" | "BACH"
 ```
