@@ -1,4 +1,3 @@
-# Use the latest CUDA image
 FROM nvidia/cuda:12.2.2-runtime-ubuntu22.04
 
 WORKDIR /diff-vision-transformer
