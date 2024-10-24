@@ -19,3 +19,9 @@ checkpoints/*
 
 # Allow the directory to exist in the repository
 !checkpoints/.gitkeep
+
+# Jupyter notebooks (experiments, etc)
+jupyter_notebooks/*
+
+# Allow the directory to exist in the repository
+!jupyter_notebooks/.gitkeep
