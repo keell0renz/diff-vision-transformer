@@ -99,6 +99,9 @@ def download_file_from_hf(filename_in: str, directory_out: str) -> None:
 
     api = HfApi()
 
+    if filename_in.startswith('/'):
+        filename_in = filename_in[1:]
+
     api.hf_hub_download(
         repo_id=repo_id,
         filename=filename_in,
