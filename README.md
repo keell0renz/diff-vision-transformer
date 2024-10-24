@@ -100,6 +100,8 @@ GitHub CI/CD is set to dockerize training code and upload it on dedicated contai
 
 #### Training
 
+_These commands are to be run in `.venv` environment managed by `uv`, and in Docker instance it is set automatically._
+
 ```bash
 python3 run.py train
     --model "vit_classic" | "vit_differential"
@@ -122,13 +124,13 @@ python3 run.py evaluate
 #### Upload / Download
 
 ```bash
-uv run run.py upload
+python3 run.py upload
     <path> # Path on local repository.
     <path> # Path (directory) on HF repository.
 ```
 
 ```bash
-uv run run.py download
+python3 run.py download
     <path> # Path on HF repository.
     <path> # Path (directory) on local repository.
 ```

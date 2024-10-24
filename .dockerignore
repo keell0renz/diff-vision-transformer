@@ -1,0 +1,7 @@
+.venv
+.mypy_cache
+uv.lock
+checkpoints/*
+!checkpoints/.gitkeep
+jupyter_notebooks
+.env
